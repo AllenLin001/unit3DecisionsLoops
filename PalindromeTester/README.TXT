@@ -1,4 +1,4 @@
-Target: Implement an algorithm using looping structures.
+ASASASASADAFDADASDASTarget: Implement an algorithm using looping structures.
 
 Class Programming Activity
 
