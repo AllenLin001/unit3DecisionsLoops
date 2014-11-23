@@ -9,22 +9,28 @@ import info.gridworld.grid.Location;
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
  * Also demonstrates how to provide accessor methods to make the class testable by unit tests.
  * 
- * @author @gcschmit
- * @version 18 July 2014
+ * @author @Allen Lin
+ * @version 20 Nov 2014
  */
 public class GameOfLife
 {
     // the world comprised of the grid that displays the graphics for the game
     private ActorWorld world;
     
-    // the game board will have 5 rows and 5 columns
-    private final int ROWS = 5;
-    private final int COLS = 5;
+    // the game board will have 4 rows and 4 columns
+    private final int ROWS = 4;
+    private final int COLS = 4;
     
     // constants for the location of the three cells initially alive
-    private final int X1 = 0, Y1 = 2;
+    private final int X1 = 1, Y1 = 1;
+    private final int X1 = 1, Y1 = 2;
+    private final int X1 = 1, Y1 = 3;
     private final int X2 = 2, Y2 = 0;
-    private final int X3 = 2, Y3 = 1;
+    private final int X2 = 2, Y2 = 1;
+    private final int X2 = 2, Y2 = 3;
+    private final int X2 = 2, Y2 = 4;
+    private final int X3 = 3, Y3 = 1;
+    private final int X3 = 3, Y3 = 3;
 
     /**
      * Default constructor for objects of class GameOfLife
