@@ -104,19 +104,16 @@ public class GameOfLife
         if(grid.get(Location))== null
         && grid.getOccupiedAdjacentLocations(Loca).size()==3)
         {
-	        Tree tree = new Tree();
-	        grid.put(Loca, tree);
+	        Rock rock = new Rock();
+	        grid.put(Loca, rock);
         }
 
         else if (grid.get(Loca))!= null
-        && grid.getOccupiedAdjcentLocations(Loca).size()==4
+        && grid.getOccupiedAdjcentLocations(Loca).size()>3
         || grid.getOccupiedAdjcentLocations(Loca).size() < 2)
         { 
-	        grid.remove(Location,rock);
+		grid.remove(Location,rock);
         }
-        
-        else fi (grid.get(loca))!= null
-        && 
 
     } 
     
