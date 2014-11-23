@@ -22,6 +22,7 @@ public class GameOfLife
     private final int COLS = 4;
     
     // constants for the location of the three cells initially alive
+    
     private final int X1 = 1, Y1 = 1;
     private final int X1 = 1, Y1 = 2;
     private final int X1 = 1, Y1 = 3;
@@ -99,8 +100,25 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
+        Location loca = new Location(x,y);
+        if(grid.get(Location))== null
+        && grid.getOccupiedAdjacentLocations(Loca).size()==3)
+        {
+	        Tree tree = new Tree();
+	        grid.put(Loca, tree);
+        }
+
+        else if (grid.get(Loca))!= null
+        && grid.getOccupiedAdjcentLocations(Loca).size()==4
+        || grid.getOccupiedAdjcentLocations(Loca).size() < 2)
+        { 
+	        grid.remove(Location,rock);
+        }
         
-    }
+        else fi (grid.get(loca))!= null
+        && 
+
+    } 
     
     /**
      * Returns the actor at the specified row and column. Intended to be used for unit testing.
