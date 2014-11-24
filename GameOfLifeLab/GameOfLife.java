@@ -115,7 +115,7 @@ public class GameOfLife
      * @post    the world has been populated with a new grid containing the next generation
      * 
      */
-    private void createNextGeneration()
+    public void createNextGeneration()
     {
     	BoundedGrid<Actor> grid2 = new BoundedGrid<Actor>(ROWS, COLS);
     	Grid<Actor> grid1 = world.getGrid();
@@ -201,7 +201,11 @@ public class GameOfLife
     public static void main(String[] args)
     {
         GameOfLife game = new GameOfLife();
-        
+        for (int i = 0; i<6; i++)
+        {
+        	game.createNextGeneration();
+        	Thread.sleep(1000); 
+        }
     }
 
 }
