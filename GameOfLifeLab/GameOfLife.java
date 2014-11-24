@@ -10,7 +10,7 @@ import info.gridworld.grid.Location;
  * Also demonstrates how to provide accessor methods to make the class testable by unit tests.
  * 
  * @author @Allen Lin
- * @version 20 Nov 2014
+ * @version 23 Nov 2014
  */
 public class GameOfLife
 {
@@ -24,14 +24,14 @@ public class GameOfLife
     // constants for the location of the three cells initially alive
     
     private final int X1 = 1, Y1 = 1;
-    private final int X1 = 1, Y1 = 2;
-    private final int X1 = 1, Y1 = 3;
-    private final int X2 = 2, Y2 = 0;
-    private final int X2 = 2, Y2 = 1;
-    private final int X2 = 2, Y2 = 3;
-    private final int X2 = 2, Y2 = 4;
-    private final int X3 = 3, Y3 = 1;
-    private final int X3 = 3, Y3 = 3;
+    private final int X2 = 1, Y2 = 2;
+    private final int X3 = 1, Y3 = 3;
+    private final int X4 = 2, Y4 = 0;
+    private final int X5 = 2, Y5 = 1;
+    private final int X6 = 2, Y6 = 3;
+    private final int X7 = 2, Y7 = 4;
+    private final int X8 = 3, Y8 = 1;
+    private final int X9 = 3, Y9 = 3;
 
     /**
      * Default constructor for objects of class GameOfLife
