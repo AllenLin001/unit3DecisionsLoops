@@ -118,7 +118,7 @@ public class GameOfLife
     private void createNextGeneration()
     {
     	BoundedGrid<Actor> grid2 = new BoundedGrid<Actor>(ROWS, COLS);
-    	Grid<Actor> grid2 = world.getGrid();
+    	Grid<Actor> grid1 = world.getGrid();
     	for(int row = 0; row < ROWS; row++)
         {
             for(int col = 0; col < COLS; col++)
@@ -130,31 +130,31 @@ public class GameOfLife
          */
         
         // create the grid, of the specified size, that contains Actors
-        	Grid<Actor> grid1 = world.getGrid();
+        	
         
         // insert magic here...
         	Location loca = new Location(x,y);
-        	if(grid1.get(loca))== null
+        	if(grid1.get(loca)== null
 	 	&& grid1.getOccupiedAdjacentLocations(loca).size()==3)
         	{
 	        	Rock rock = new Rock();
 	        	grid2.put(loca, rock);
         	}
 
-        	else if (grid1.get(loca))!= null
-        	&& (grid1.getOccupiedAdjacentLocations(Loca).size()>3
-        	|| grid1.getOccupiedAdjacentLocations(Loca).size() < 2)
+        	else if (grid1.get(loca)!= null
+        	&& (grid1.getOccupiedAdjacentLocations(loca).size()>3
+        	|| grid1.getOccupiedAdjacentLocations(loca).size() < 2)
         	{ 
 			grid2.remove(loca);
         	}
         	
-        	else if (grid1.get(loca))!= null
-        	&& (grid1.getOccupiedAdjacentLocations(Loca).size()==3
-        	|| grid1.getOccupiedAdjacentLocations(Loca).size()==2))
+        	else if (grid1.get(loca)!= null
+        	&& (grid1.getOccupiedAdjacentLocations(loca).size()==3
+        	|| grid1.getOccupiedAdjacentLocations(loca).size()==2))
         	{
         		grid2.put(loca,rock);
         	}
-
+	World.setGrid(grid2);
             }
         }
     }
@@ -201,6 +201,7 @@ public class GameOfLife
     public static void main(String[] args)
     {
         GameOfLife game = new GameOfLife();
+        
     }
 
 }
