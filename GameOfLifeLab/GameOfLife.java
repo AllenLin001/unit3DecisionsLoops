@@ -117,31 +117,47 @@ public class GameOfLife
      */
     private void createNextGeneration()
     {
+    	BoundedGrid<Actor> grid2 = new BoundedGrid<Actor>(ROWS, COLS);
+    	Grid<Actor> grid2 = world.getGrid();
+    	for(int row = 0; row < ROWS; row++)
+        {
+            for(int col = 0; col < COLS; col++)
+            {
+        // in this example, an alive cell has a non-null actor and a dead cell has a null actor
+                Actor cell = game.getActor(row, col);
         /** You will need to read the documentation for the World, Grid, and Location classes
          *      in order to implement the Game of Life algorithm and leverage the GridWorld framework.
          */
         
         // create the grid, of the specified size, that contains Actors
-        Grid<Actor> grid = world.getGrid();
+        	Grid<Actor> grid1 = world.getGrid();
         
         // insert magic here...
-        Location loca = new Location(x,y);
-        if(grid.get(Location))== null
-        && grid.getOccupiedAdjacentLocations(Loca).size()==3)
-        {
-	        Rock rock = new Rock();
-	        grid.put(Loca, rock);
-        }
+        	Location loca = new Location(x,y);
+        	if(grid1.get(loca))== null
+	 	&& grid1.getOccupiedAdjacentLocations(loca).size()==3)
+        	{
+	        	Rock rock = new Rock();
+	        	grid2.put(loca, rock);
+        	}
 
-        else if (grid.get(Loca))!= null
-        && grid.getOccupiedAdjcentLocations(Loca).size()>3
-        || grid.getOccupiedAdjcentLocations(Loca).size() < 2)
-        { 
-		grid.remove(Location,rock);
-        }
+        	else if (grid1.get(loca))!= null
+        	&& (grid1.getOccupiedAdjacentLocations(Loca).size()>3
+        	|| grid1.getOccupiedAdjacentLocations(Loca).size() < 2)
+        	{ 
+			grid2.remove(loca);
+        	}
+        	
+        	else if (grid1.get(loca))!= null
+        	&& (grid1.getOccupiedAdjacentLocations(Loca).size()==3
+        	|| grid1.getOccupiedAdjacentLocations(Loca).size()==2))
+        	{
+        		grid2.put(loca,rock);
+        	}
 
-    } 
-    
+            }
+        }
+    }
     /**
      * Returns the actor at the specified row and column. Intended to be used for unit testing.
      *
