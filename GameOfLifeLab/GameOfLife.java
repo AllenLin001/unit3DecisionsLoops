@@ -16,13 +16,12 @@ public class GameOfLife
 {
     // the world comprised of the grid that displays the graphics for the game
     private ActorWorld world;
-    
+
     // the game board will have 4 rows and 4 columns
     private final int ROWS = 10;
     private final int COLS = 10;
-    
     // constants for the location of the three cells initially alive
-    
+
     private final int X1 = 1, Y1 = 1;
     private final int X2 = 1, Y2 = 2;
     private final int X3 = 1, Y3 = 3;
@@ -32,6 +31,7 @@ public class GameOfLife
     private final int X7 = 2, Y7 = 4;
     private final int X8 = 3, Y8 = 1;
     private final int X9 = 3, Y9 = 3;
+
 
     /**
      * Default constructor for objects of class GameOfLife
@@ -43,18 +43,18 @@ public class GameOfLife
     {
         // create the grid, of the specified size, that contains Actors
         BoundedGrid<Actor> grid = new BoundedGrid<Actor>(ROWS, COLS);
-        
+
         // create a world based on the grid
         world = new ActorWorld(grid);
-        
+
         // populate the game
         populateGame();
-        
+
         // display the newly constructed and populated world
         world.show();
-        
+
     }
-    
+
     /**
      * Creates the actors and inserts them into their initial starting positions in the grid
      *
@@ -67,46 +67,47 @@ public class GameOfLife
         // the grid of Actors that maintains the state of the game
         //  (alive cells contains actors; dead cells do not)
         Grid<Actor> grid = world.getGrid();
-        
+
+
         // create and add rocks (a type of Actor) to the nine intial locations
         Rock rock1 = new Rock();
         Location loc1 = new Location(X1, Y1);
         grid.put(loc1, rock1);
-        
+
         Rock rock2 = new Rock();
         Location loc2 = new Location(X2, Y2);
         grid.put(loc2, rock2);
-        
+
         Rock rock3 = new Rock();
         Location loc3 = new Location(X3, Y3);
         grid.put(loc3, rock3);
-        
+
         Rock rock4 = new Rock ();
         Location loc4 = new Location (X4,Y4);
         grid.put(loc4,rock4);
-        
+
         Rock rock5 = new Rock ();
         Location loc5 = new Location (X5,Y5);
         grid.put(loc5,rock5);
-        
+
         Rock rock6 = new Rock ();
         Location loc6 = new Location (X6,Y6);
         grid.put(loc6,rock6);
-        
+
         Rock rock7 = new Rock ();
         Location loc7 = new Location (X7,Y7);
         grid.put(loc7,rock7);
-        
+
         Rock rock8 = new Rock ();
         Location loc8 = new Location (X8,Y8);
         grid.put(loc8,rock8);
-        
+
         Rock rock9 = new Rock ();
         Location loc9 = new Location (X9,Y9);
         grid.put(loc9,rock9);
-        
-    }
 
+    }
+    
     /**
      * Generates the next generation based on the rules of the Game of Life and updates the grid
      * associated with the world
@@ -115,49 +116,47 @@ public class GameOfLife
      * @post    the world has been populated with a new grid containing the next generation
      * 
      */
+
     public void createNextGeneration()
     {
-    	BoundedGrid<Actor> grid2 = new BoundedGrid<Actor>(ROWS, COLS);
-    	Grid<Actor> grid1 = world.getGrid();
-    	for(int row = 0; row < ROWS; row++)
+        BoundedGrid<Actor> grid2 = new BoundedGrid<Actor>(ROWS, COLS);
+        Grid<Actor> grid1 = world.getGrid();
+        for(int row = 0; row < ROWS; row++)
         {
             for(int col = 0; col < COLS; col++)
             {
-        // in this example, an alive cell has a non-null actor and a dead cell has a null actor
-                Actor cell = game.getActor(row, col);
-        /** You will need to read the documentation for the World, Grid, and Location classes
-         *      in order to implement the Game of Life algorithm and leverage the GridWorld framework.
-         */
-        
-        // create the grid, of the specified size, that contains Actors
-        	
-        
-        // insert magic here...
-        	Location loca = new Location(x,y);
-        	if(grid1.get(loca)== null
-	 	&& grid1.getOccupiedAdjacentLocations(loca).size()==3)
-        	{
-	        	Rock rock = new Rock();
-	        	grid2.put(loca, rock);
-        	}
+                // in this example, an alive cell has a non-null actor and a dead cell has a null actor
 
-        	else if (grid1.get(loca)!= null
-        	&& (grid1.getOccupiedAdjacentLocations(loca).size()>3
-        	|| grid1.getOccupiedAdjacentLocations(loca).size() < 2)
-        	{ 
-			grid2.remove(loca);
-        	}
-        	
-        	else if (grid1.get(loca)!= null
-        	&& (grid1.getOccupiedAdjacentLocations(loca).size()==3
-        	|| grid1.getOccupiedAdjacentLocations(loca).size()==2))
-        	{
-        		grid2.put(loca,rock);
-        	}
-	World.setGrid(grid2);
+                // create the grid, of the specified size, that contains Actors
+
+                // insert magic here...
+                Location loca = new Location(row,col);
+                if(grid1.get(loca)== null
+                && grid1.getOccupiedAdjacentLocations(loca).size()==3)
+                {
+                    Rock rock = new Rock();
+                    grid2.put(loca, rock);
+                }
+
+                else if (grid1.get(loca)!= null
+                && (grid1.getOccupiedAdjacentLocations(loca).size()>3
+                    || grid1.getOccupiedAdjacentLocations(loca).size() < 2))
+                {
+                    grid2.remove(loca);
+                }
+
+                else if (grid1.get(loca)!= null
+                && (grid1.getOccupiedAdjacentLocations(loca).size()==3
+                    || grid1.getOccupiedAdjacentLocations(loca).size()==2))
+                {
+                    Rock rock = new Rock();
+                    grid2.put(loca,rock);
+                }
+                world.setGrid(grid2);
             }
         }
     }
+
     /**
      * Returns the actor at the specified row and column. Intended to be used for unit testing.
      *
@@ -182,7 +181,7 @@ public class GameOfLife
     {
         return ROWS;
     }
-    
+
     /**
      * Returns the number of columns in the game board
      *
@@ -192,8 +191,7 @@ public class GameOfLife
     {
         return COLS;
     }
-    
-    
+
     /**
      * Creates an instance of this class. Provides convenient execution.
      *
@@ -201,11 +199,15 @@ public class GameOfLife
     public static void main(String[] args)
     {
         GameOfLife game = new GameOfLife();
-        for (int i = 0; i<6; i++)
-        {
-        	game.createNextGeneration();
-        	Thread.sleep(1000); 
+        
+        try {
+            for (int i = 0; i<6; i++)
+            {
+                game.createNextGeneration();
+                Thread.sleep(2000); 
+            }
+        } catch (Exception e) {
+            System.out.println("SAD"); 
         }
     }
-
 }
