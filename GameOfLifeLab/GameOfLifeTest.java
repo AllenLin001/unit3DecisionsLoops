@@ -128,9 +128,6 @@ public class GameOfLifeTest
                         (row == 3 && col == 1)||
 
                         (row == 3 && col == 5)||
-
-                        (row == 3 && col == 5)||
-
                         (row == 3 && col == 6))
                 {
                     assertNotNull("expected alive cell at (" + row + ", " + col + ")", cell);
