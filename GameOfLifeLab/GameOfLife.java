@@ -207,7 +207,7 @@ public class GameOfLife
                 Thread.sleep(2000); 
             }
         } catch (Exception e) {
-            System.out.println("SAD"); 
+            System.out.println("Nah"); 
         }
     }
 }
