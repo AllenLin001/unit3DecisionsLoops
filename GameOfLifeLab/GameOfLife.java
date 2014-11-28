@@ -17,10 +17,10 @@ public class GameOfLife
     // the world comprised of the grid that displays the graphics for the game
     private ActorWorld world;
 
-    // the game board will have 4 rows and 4 columns
+    // the game board will have 10 rows and 10 columns
     private final int ROWS = 10;
     private final int COLS = 10;
-    // constants for the location of the three cells initially alive
+    // constants for the location of the nine cells initially alive
 
     private final int X1 = 1, Y1 = 1;
     private final int X2 = 1, Y2 = 2;
@@ -62,7 +62,7 @@ public class GameOfLife
      * @post    all actors that comprise the initial state of the game have been added to the grid
      * 
      */
-    private void populateGame()
+    public void populateGame()
     {
         // the grid of Actors that maintains the state of the game
         //  (alive cells contains actors; dead cells do not)
@@ -119,16 +119,14 @@ public class GameOfLife
 
     public void createNextGeneration()
     {
+        // create the grid, of the specified size, that contains Actors
         BoundedGrid<Actor> grid2 = new BoundedGrid<Actor>(ROWS, COLS);
+        // in this example, an alive cell has a non-null actor and a dead cell has a null actor
         Grid<Actor> grid1 = world.getGrid();
         for(int row = 0; row < ROWS; row++)
         {
             for(int col = 0; col < COLS; col++)
             {
-                // in this example, an alive cell has a non-null actor and a dead cell has a null actor
-
-                // create the grid, of the specified size, that contains Actors
-
                 // insert magic here...
                 Location loca = new Location(row,col);
                 if(grid1.get(loca)== null
