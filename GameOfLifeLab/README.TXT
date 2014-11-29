@@ -1,3 +1,31 @@
+questions that your requirements should address:
+
+how large is the grid? is it boundless?
+The grid will be 10 X 10. It will not be boundless. 
+
+what do live cells look like?
+The live cells will be represented by rocks.
+
+what do dead cells look like?
+The dead cells will be represented by nothing, so leave them as blank spaces. 
+
+what pattern is displayed? are multiple patterns available? are patterns chosen in code, chosen randomly, chosen by user
+how long does the game run? does it run forever? does it prompt the user to continue?
+The pattern displayed is pre-chosen by the maker of this program. It will run six generations, and it does not prompt the user 
+to continue. The pattern displayed is a simple that I created that represents harmony. 
+
+what is the time interval between generations?
+The time interval between each generation will be 2 seconds. 
+
+what about edge cases? does it wrap around?
+If cells run out of edge, then they will be dead and not be displayed. 
+
+reflection: 
+     Due to the lack of time my gameoflife lab is not perfect. It barely meets the functional requirements and could 
+     difinitely be improved upon. I did not deal with the edge issue or make any awesome pattern.
+     Next time I will start the lab as soon as possible and do my best to avoid the last minitue rush. Also I will try 
+     my best to get java installed at home, as the course gets more challenging, it is no longer an option.
+
 Introduction
 
 The goal of this lab is to apply your understanding of decision and loop
