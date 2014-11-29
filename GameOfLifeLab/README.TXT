@@ -25,7 +25,24 @@ reflection:
      difinitely be improved upon. I did not deal with the edge issue or make any awesome pattern.
      Next time I will start the lab as soon as possible and do my best to avoid the last minitue rush. Also I will try 
      my best to get java installed at home, as the course gets more challenging, it is no longer an option.
-
+     
+Design: 
+	1. finish all the planning questions. 
+	2. come up with an initial pattern and put it in the web app to find out what the final pattern will be. 
+	3. after having the intial and final patterns work on the unit test. 
+	   implement the initial and final patterns based on the code given by Mr. Schmit
+	   based on the row number and col number of each live cell implement the initial and final test methods accordingly.
+	
+	4. After finishing the unit test class, based on the rows and cols of the initial pattern implemented in the unit test
+	   initial test method make constant instance variables according to the position of the live cell in the initial pattern.
+	5. pass in the instance variables(position of the live cells in the initial pattern) made before 
+	   into the populate game method. 
+	6. implement the createNextGeneration method based on the rules of game of life given.  
+	   make a new 10*10 grid named grid 2 and passed in the grid 1 which contains the initial pattern.
+	   construct a for loop to loop through all points in the grid1 and based on whether the point is dead or alive 
+	   execute the rules of game of life to determine whether to add an actor to grid2.
+	   after that set the current grid to grid2. 
+	7. implement the main method so the createNextGeneration runs exactly six times. 
 Introduction
 
 The goal of this lab is to apply your understanding of decision and loop
