@@ -201,8 +201,8 @@ public class GameOfLife
         try {
             for (int i = 0; i<6; i++)
             {
-                game.createNextGeneration();
                 Thread.sleep(2000); 
+                game.createNextGeneration();
             }
         } catch (Exception e) {
             System.out.println("Nah"); 
