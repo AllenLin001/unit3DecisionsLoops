@@ -192,14 +192,15 @@ public class GameOfLife
 
     /**
      * Creates an instance of this class. Provides convenient execution.
-     *
+     * Make the createNextGeneration method run four times to generate the four fourth generation of the initial pattern.
+     * Sleep 2 seconds after each generation.
      */
     public static void main(String[] args)
     {
         GameOfLife game = new GameOfLife();
         
         try {
-            for (int i = 0; i<6; i++)
+            for (int i = 0; i<4; i++)
             {
                 Thread.sleep(2000); 
                 game.createNextGeneration();
